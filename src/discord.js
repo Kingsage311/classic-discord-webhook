@@ -25,15 +25,14 @@ function createEmbed(repo, branch, url, commits, size) {
     console.log(latest)
     return new MessageEmbed()
         .setColor('#fbab04')
-        .setTitle(`${repo.url} Was updated at ${branch}`)
+        .setTitle(`${repo} Was updated at ${branch}`)
         //.setTitle(`${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`)
         //.setTitle(size + (size == 1 ? " Commit was " : " Commits were ") + "added to " + repo + " (" + branch + ")")
         .setAuthor({
-            name: `${latest.author.username}`,    
+            name: `Commits made by ${latest.author.username}`,    
         //name: `${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`,
             iconURL: `https://github.com/${latest.author.username}.png?size=32`,
         })
-        .setThumbnail('https://raw.githubusercontent.com/Kingsage311/Kingsage311/main/assets/B1old.png')
         .setDescription(`${getChangeLog(commits, size)}`)
         .setTimestamp(Date.parse(latest.timestamp))
         .setFooter({
