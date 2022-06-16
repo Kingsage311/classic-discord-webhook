@@ -24,7 +24,7 @@ function createEmbed(repo, branch, url, commits, size) {
     const latest = commits[0]
     console.log(latest)
     return new MessageEmbed()
-        .setColor(0x00bb22)
+        .setColor('#fbab04')
         //.setTitle(size + (size == 1 ? " Commit was " : " Commits were ") + "added to " + repo + " (" + branch + ")")
         .setAuthor({
             name: `${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo} ${branch}`,
