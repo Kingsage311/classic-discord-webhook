@@ -32,7 +32,7 @@ function createEmbed(repo, branch, url, commits, size) {
             iconURL: `https://github.com/${latest.author.username}.png?size=32`,
         })
         .setDescription(`${getChangeLog(commits, size)}`)
-        .addField(`Branch, ${branch}`, true)
+        .addField('Branch ', ${branch}, true)
         .setTimestamp(Date.parse(latest.timestamp))
         .setFooter({
             text: `⚡ Edited by @${latest.author.username}`,
