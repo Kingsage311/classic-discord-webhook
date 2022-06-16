@@ -25,20 +25,23 @@ function createEmbed(repo, branch, url, commits, size) {
     console.log(latest)
     return new MessageEmbed()
         .setColor('#fbab04')
+        .setTitle(`${repo}`)
         //.setTitle(`${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`)
         //.setTitle(size + (size == 1 ? " Commit was " : " Commits were ") + "added to " + repo + " (" + branch + ")")
         .setAuthor({
-            name: `${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`,
+            name: `@${latest.author.username}`,    
+        //name: `${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`,
             iconURL: `https://github.com/${latest.author.username}.png?size=32`,
         })
         .setDescription(`${getChangeLog(commits, size)}`)
         .addField('Branch ', `${branch}`, true)
         .setTimestamp(Date.parse(latest.timestamp))
         .setFooter({
-            text: `⚡ Edited by @${latest.author.username}`,
+            text: 'Burn One Studios' ,
+            iconURL: 'https://i.imgur.com/AfFp7pu.png',
         })
 }
-
+//text: `⚡ Edited by @${latest.author.username}`
 
 function getChangeLog(commits, size) {
     let changelog = ''
