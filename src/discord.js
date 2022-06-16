@@ -25,9 +25,10 @@ function createEmbed(repo, branch, url, commits, size) {
     console.log(latest)
     return new MessageEmbed()
         .setColor('#fbab04')
-        .setTitle(`${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`)
+        //.setTitle(`${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`)
         //.setTitle(size + (size == 1 ? " Commit was " : " Commits were ") + "added to " + repo + " (" + branch + ")")
         .setAuthor({
+            name: `${size} ${size === 1 ? 'commit was' : 'commits were'} added to ${repo}`,
             iconURL: `https://github.com/${latest.author.username}.png?size=32`,
         })
         .setDescription(`${getChangeLog(commits, size)}`)
