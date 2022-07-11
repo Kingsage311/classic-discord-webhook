@@ -37,7 +37,7 @@ function createEmbed(repo, branch, url, commits, size) {
         .setTimestamp(Date.parse(latest.timestamp))
         .setFooter({
             text: 'Burn One Studios' ,
-            iconURL: 'https://raw.githubusercontent.com/Kingsage311/Kingsage311/main/assets/B1old.png',
+            iconURL: 'https://raw.githubusercontent.com/Kingsage311/Kingsage311/main/assets/B1logo.png',
         })
 }
 //text: `⚡ Edited by @${latest.author.username}`
